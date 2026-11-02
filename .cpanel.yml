@@ -1,8 +1,8 @@
-# Copiază site-ul din repository în folderul public la fiecare „Deploy HEAD Commit” din cPanel.
-# Contul cPanel: administ
-# Fișierele care nu țin de site (.git, .cpanel.yml, GHID.md) nu sunt copiate.
 ---
 deployment:
   tasks:
     - export DEPLOYPATH=/home/administ/public_html/
-    - /bin/rsync -a --exclude='.git' --exclude='.cpanel.yml' --exclude='GHID*.md' --exclude='README.md' --exclude='themis/.htaccess' --exclude='themis/.htpasswd' ./ $DEPLOYPATH
+    - /bin/mkdir -p ${DEPLOYPATH}assets ${DEPLOYPATH}themis
+    - /bin/cp -f index.html 404.html confidentialitate.html contact.php robots.txt sitemap.xml .htaccess $DEPLOYPATH
+    - /bin/cp -f assets/style.css assets/main.js assets/favicon.svg ${DEPLOYPATH}assets/
+    - /bin/cp -f themis/index.html ${DEPLOYPATH}themis/
