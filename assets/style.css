@@ -200,6 +200,15 @@ form.card { padding: 28px; }
 .band-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
 .muted-p { color: var(--ink-2); }
 
+.toc { background: var(--surface-2); border-radius: var(--radius); padding: 20px 24px; margin: 28px 0; }
+.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 32px; }
+.toc li { margin: 4px 0; break-inside: avoid; }
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+.page table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.page th, .page td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.page th { color: var(--ink); background: var(--surface-2); }
+.page h1 { font-size: clamp(30px, 4vw, 42px); }
+
 /* Mobil */
 @media (max-width: 900px) {
   .hero .wrap, .contact, .themis-band { grid-template-columns: 1fr; }
@@ -213,6 +222,7 @@ form.card { padding: 28px; }
   section { padding: 64px 0; }
   .hero { padding: 56px 0 48px; }
   .grid-3, .grid-2, .two { grid-template-columns: 1fr; }
+  .toc ol { columns: 1; }
   .menu-toggle {
     display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
     border-radius: 12px; border: 1px solid var(--line); background: var(--surface); cursor: pointer;

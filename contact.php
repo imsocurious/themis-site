@@ -39,6 +39,7 @@ if (is_file($fisier)) {
     $istoric = array_filter(json_decode((string)file_get_contents($fisier), true) ?: [], fn($x) => $acum - (int)$x < 3600);
 }
 if (count($istoric) >= LIMITA_PE_ORA) { inapoi('eroare'); }
+if (!$istoric && is_file($fisier)) { @unlink($fisier); } // fără înregistrări recente: ștergem fișierul
 
 function camp(string $nume, int $max): string {
     $v = trim((string)($_POST[$nume] ?? ''));
@@ -52,7 +53,7 @@ $telefon     = camp('telefon', 30);
 $asociatie   = camp('asociatie', 150);
 $apartamente = camp('apartamente', 6);
 $mesaj       = camp('mesaj', 3000);
-$acord       = ($_POST['acord'] ?? '') === '1';
+$acord       = ($_POST['acord'] ?? '') === '1'; // confirmarea citirii politicii de confidențialitate
 
 if ($nume === '' || $mesaj === '' || !$acord || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     inapoi('eroare');
