@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-const DESTINATAR = '[EMAIL]';                 // DE COMPLETAT: adresa care primește mesajele
+const DESTINATAR = 'contact@administrez.ro';   // adresa care primește mesajele (nu apare pe site)
 const EXPEDITOR  = 'no-reply@administrez.ro'; // o adresă de pe domeniu (creată în cPanel → Email Accounts)
 const LIMITA_PE_ORA = 5;
 
