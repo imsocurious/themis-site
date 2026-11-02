@@ -239,3 +239,167 @@ form.card { padding: 28px; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ===================================================================
+   v3 – interfață modernizată și animații discrete
+   Toate animațiile se opresc automat dacă utilizatorul a ales
+   „reducerea mișcării” din sistemul de operare.
+   =================================================================== */
+:root {
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --glass: rgba(255, 255, 255, .72);
+  --ring: rgba(31, 79, 216, .18);
+}
+@view-transition { navigation: auto; }
+::selection { background: var(--brand-soft); color: var(--brand); }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: "ss01", "cv11"; }
+h1, h2 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Antet: devine compact și primește umbră la derulare */
+.site-header { transition: background .3s var(--ease), box-shadow .3s var(--ease); }
+.site-header.scrolled { background: rgba(255, 255, 255, .9); box-shadow: 0 6px 24px rgba(15, 27, 45, .06); }
+.nav a:not(.btn) { position: relative; }
+.nav a:not(.btn)::after {
+  content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease);
+}
+.nav a:not(.btn):hover::after, .nav a.activ::after { transform: scaleX(1); }
+.nav a.activ { color: var(--ink); }
+
+/* Bara de progres a lecturii */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none;
+  background: linear-gradient(90deg, var(--brand), var(--accent)); transform-origin: left; transform: scaleX(0); }
+
+/* Butoane */
+.btn { position: relative; overflow: hidden; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease); }
+.btn .arr { display: inline-block; transition: transform .3s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+.btn-primary { background: linear-gradient(135deg, #2457e6, #1a44bd); }
+.btn-primary::before {
+  content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 50%, transparent 70%);
+  transition: transform .8s var(--ease);
+}
+.btn-primary:hover::before { transform: translateX(120%); }
+.btn-primary:hover { box-shadow: 0 10px 28px rgba(31, 79, 216, .32); }
+.btn:active { transform: translateY(0) scale(.98); }
+
+/* Hero: fundal „aurora” în mișcare lentă */
+.hero::before, .hero::after { display: none; }
+.hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; will-change: transform; }
+.b1 { width: 520px; height: 520px; background: #c9d8ff; top: -160px; right: -80px; animation: float1 18s var(--ease) infinite alternate; }
+.b2 { width: 420px; height: 420px; background: #c5efe7; bottom: -200px; left: -120px; animation: float2 22s var(--ease) infinite alternate; }
+.b3 { width: 300px; height: 300px; background: #e6dcff; top: 30%; left: 45%; opacity: .35; animation: float3 26s var(--ease) infinite alternate; }
+.grid-lines {
+  position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(15, 27, 45, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 27, 45, .04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+}
+@keyframes float1 { to { transform: translate(-80px, 60px) scale(1.08); } }
+@keyframes float2 { to { transform: translate(90px, -50px) scale(1.12); } }
+@keyframes float3 { to { transform: translate(-60px, -40px) scale(.9); } }
+
+/* Hero: intrare eșalonată a textului */
+.hero .wrap > div > * { animation: rise .9s var(--ease) both; }
+.hero .wrap > div > :nth-child(2) { animation-delay: .08s; }
+.hero .wrap > div > :nth-child(3) { animation-delay: .16s; }
+.hero .wrap > div > :nth-child(4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+h1 .hl { background-size: 200% auto; background-image: linear-gradient(90deg, var(--brand), var(--accent), var(--brand)); animation: sheen 8s linear infinite; }
+@keyframes sheen { to { background-position: 200% center; } }
+
+/* Hero: cardul „verificare în lucru” */
+.hero-card {
+  background: var(--glass); backdrop-filter: blur(16px) saturate(160%); -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, .8); border-radius: 22px; padding: 26px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 24px 60px -12px rgba(15, 27, 45, .18);
+  animation: rise 1s var(--ease) .2s both, bob 7s ease-in-out 1.4s infinite;
+}
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.hc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.hc-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.hc-title { display: block; font-size: 17px; margin-top: 2px; }
+.hc-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #fff4e0; color: #9a5b00; white-space: nowrap; animation: pill-done 0s linear 3.4s forwards; }
+.hc-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+@keyframes pill-done { to { background: #e3f6f2; color: #0b6b5e; } }
+.hc-pill .tw { display: inline-grid; }
+.hc-pill .t1, .hc-pill .t2 { grid-area: 1 / 1; }
+.hc-pill .t2 { opacity: 0; animation: fade-in .4s ease 3.4s forwards; }
+.hc-pill .t1 { animation: fade-out .4s ease 3.4s forwards; }
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes fade-out { to { opacity: 0; } }
+.hc-bar { height: 6px; border-radius: 6px; background: var(--surface-2); overflow: hidden; margin-bottom: 18px; }
+.hc-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--accent)); transform-origin: left; animation: fill 2.6s var(--ease) .6s both; }
+@keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.check-list li { animation: rise .6s var(--ease) both; }
+.check-list li:nth-child(1) { animation-delay: .8s; }
+.check-list li:nth-child(2) { animation-delay: 1.3s; }
+.check-list li:nth-child(3) { animation-delay: 1.8s; }
+.check-list li:nth-child(4) { animation-delay: 2.3s; }
+.ic svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 24; stroke-dashoffset: 24; animation: draw .5s var(--ease) forwards; }
+.check-list li:nth-child(1) .ic svg { animation-delay: 1.0s; }
+.check-list li:nth-child(2) .ic svg { animation-delay: 1.5s; }
+.check-list li:nth-child(3) .ic svg { animation-delay: 2.0s; }
+.check-list li:nth-child(4) .ic svg { animation-delay: 2.5s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hc-result { display: flex; align-items: center; gap: 10px; margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); font-weight: 600; font-size: 15px; color: #0b6b5e; animation: rise .7s var(--ease) 3.2s both; }
+.hc-result .ic { flex: none; width: 24px; height: 24px; border-radius: 8px; background: #e3f6f2; display: grid; place-items: center; }
+.hc-result .ic svg { animation-delay: 3.5s; }
+
+/* Carduri: lumină care urmărește cursorul și contur în degrade */
+.card { position: relative; isolation: isolate; transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease); }
+.card::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity .4s var(--ease);
+  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), rgba(31, 79, 216, .07), transparent 45%);
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(31, 79, 216, .25); box-shadow: 0 20px 40px -16px rgba(15, 27, 45, .18); }
+.card:hover::before { opacity: 1; }
+.card-icon { transition: transform .45s var(--ease), background .45s var(--ease), color .45s var(--ease); }
+.card:hover .card-icon { transform: rotate(-6deg) scale(1.08); background: var(--brand); color: #fff; }
+.stat { transition: transform .45s var(--ease), background .45s var(--ease); }
+.stat:hover { transform: translateY(-3px); background: var(--brand-soft); }
+.stat b { background: linear-gradient(135deg, var(--ink), var(--brand)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Apariție la derulare (activată doar din JavaScript, deci conținutul e vizibil și fără JS) */
+.rv.ascuns { opacity: 0; transform: translateY(26px); }
+.rv.vizibil { opacity: 1; transform: none; transition: opacity .9s var(--ease) var(--d, 0s), transform .9s var(--ease) var(--d, 0s); }
+.timeline.rv-line::before { transform-origin: top; transition: transform 1.6s var(--ease); }
+.timeline.rv-line.ascuns-linie::before { transform: scaleY(0); }
+
+/* Banda Themis: degrade animat și lucire */
+.themis-band { position: relative; overflow: hidden; background-size: 200% 200%; animation: band 14s ease-in-out infinite alternate; }
+.themis-band::after {
+  content: ""; position: absolute; width: 380px; height: 380px; right: -120px; top: -160px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, .22), transparent); pointer-events: none;
+}
+@keyframes band { to { background-position: 100% 100%; } }
+
+/* Formular */
+.field input, .field textarea { transition: border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease); }
+.field input:hover, .field textarea:hover { border-color: #cdd6e4; }
+.field input:focus, .field textarea:focus { background: #fff; }
+.contact-info .row { transition: transform .4s var(--ease), border-color .4s var(--ease); }
+.contact-info .row:hover { transform: translateX(4px); border-color: rgba(31, 79, 216, .25); }
+
+/* Mișcare redusă: fără animații, totul vizibil */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .rv.ascuns { opacity: 1; transform: none; }
+  .ic svg { stroke-dashoffset: 0; }
+  .hc-pill { background: #e3f6f2; color: #0b6b5e; }
+  .hc-pill .t1 { opacity: 0; }
+  .hc-pill .t2 { opacity: 1; }
+  .timeline.rv-line.ascuns-linie::before { transform: none; }
+  @view-transition { navigation: none; }
+}
+@media (max-width: 760px) {
+  .blob { filter: blur(48px); }
+  .b3 { display: none; }
+  .hero-card { animation: rise 1s var(--ease) .2s both; }
+}

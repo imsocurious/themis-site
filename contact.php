@@ -21,6 +21,19 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     exit;
 }
 
+header_remove('X-Powered-By');
+
+// Cererea trebuie să vină de pe propriul site (protecție CSRF fără cookie-uri):
+// browserele moderne trimit Sec-Fetch-Site; pentru cele vechi verificăm antetul Origin.
+$fetchSite = $_SERVER['HTTP_SEC_FETCH_SITE'] ?? '';
+$origin    = $_SERVER['HTTP_ORIGIN'] ?? '';
+$host      = $_SERVER['HTTP_HOST'] ?? '';
+if ($fetchSite !== '' && $fetchSite !== 'same-origin') { inapoi('eroare'); }
+if ($fetchSite === '' && $origin !== '' && parse_url($origin, PHP_URL_HOST) !== $host) { inapoi('eroare'); }
+
+// Respinge cererile neobișnuit de mari (formularul are cel mult ~4 KB de text).
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 20000) { inapoi('eroare'); }
+
 // Capcană: boții completează câmpul ascuns.
 if (!empty($_POST['website'])) { inapoi('ok'); }
 
