@@ -2,8 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/administ/public_html/
-    - /bin/mkdir -p ${DEPLOYPATH}assets ${DEPLOYPATH}themis ${DEPLOYPATH}.well-known
+    - /bin/mkdir -p ${DEPLOYPATH}assets ${DEPLOYPATH}themis ${DEPLOYPATH}.well-known ${DEPLOYPATH}assets/fonts
     - /bin/cp -f index.html 404.html confidentialitate.html contact.php robots.txt sitemap.xml .htaccess $DEPLOYPATH
     - /bin/cp -f assets/style.css assets/main.js assets/favicon.svg ${DEPLOYPATH}assets/
     - /bin/cp -f themis/index.html ${DEPLOYPATH}themis/
     - /bin/cp -f .well-known/security.txt ${DEPLOYPATH}.well-known/
+    - /bin/cp -f assets/fonts/*.woff2 assets/fonts/*.txt ${DEPLOYPATH}assets/fonts/

@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Themis Expert – Cenzorat pentru asociații de proprietari</title>
   <meta name="description" content="Themis Expert SRL oferă servicii de cenzorat pentru asociațiile de proprietari: verificarea lunară a gestiunii, rapoarte clare pentru adunarea generală și conformitate cu Legea 196/2018.">
-  <meta name="theme-color" content="#1f4fd8">
+  <meta name="theme-color" content="#0b1424">
   <link rel="canonical" href="https://administrez.ro/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Themis Expert – Cenzorat pentru asociații de proprietari">
-  <meta property="og:description" content="Verificăm gestiunea asociației lună de lună, cu rigoare și rapoarte pe care le înțelege orice proprietar.">
+  <meta property="og:description" content="Echilibru, rigoare și încredere în gestiunea asociației voastre.">
   <meta property="og:url" content="https://administrez.ro/">
   <meta property="og:locale" content="ro_RO">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link rel="preload" href="assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css?v=4">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,21 +23,22 @@
     "name": "Themis Expert SRL",
     "url": "https://administrez.ro/",
     "description": "Servicii de cenzorat pentru asociații de proprietari.",
-    "areaServed": "RO"
+    "areaServed": "RO",
+    "taxID": "48219871"
   }
   </script>
 </head>
-<body>
+<body class="acasa">
 <a class="skip" href="#continut">Sari la conținut</a>
 
-<header class="site-header" id="antet">
+<header class="site-header peste" id="antet">
   <div class="wrap">
     <a class="logo" href="./" aria-label="Themis Expert – acasă">
-      <span class="logo-mark" aria-hidden="true">T</span>
-      <span>Themis Expert<small>Cenzorat pentru asociații</small></span>
+      <span class="monogram" aria-hidden="true">T</span>
+      <span class="logo-text">Themis Expert<small>Cenzorat · București</small></span>
     </a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Deschide meniul">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <span></span><span></span>
     </button>
     <nav class="nav" id="nav" aria-label="Meniu principal">
       <a href="#despre">Despre noi</a>
@@ -43,7 +46,7 @@
       <a href="#valori">Valori</a>
       <a href="#istoric">Istoric</a>
       <a href="#tehnologie">Tehnologie</a>
-      <a class="btn btn-primary" href="#contact">Cere o ofertă</a>
+      <a class="btn btn-aur" href="#contact"><span>Consultare</span></a>
     </nav>
   </div>
 </header>
@@ -52,180 +55,227 @@
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="titlu">
-    <div class="hero-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="grid-lines"></span></div>
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">Cenzorat · Legea 196/2018</span>
-        <h1 id="titlu">Liniște pentru proprietari. <span class="hl">Claritate în fiecare leu.</span></h1>
-        <p class="lead">Verificăm gestiunea asociației voastre lună de lună, cu rigoare de expert și rapoarte pe care le înțelege orice proprietar.</p>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="supra"><span class="filet" aria-hidden="true"></span>Cenzorat pentru asociații de proprietari</p>
+        <h1 id="titlu">
+          <span class="linie"><span>Echilibru.</span></span>
+          <span class="linie"><span><em>Rigoare.</em></span></span>
+          <span class="linie"><span>Încredere.</span></span>
+        </h1>
+        <p class="lead">Verificăm gestiunea asociației voastre lună de lună, cu discreția și exigența unei case de audit, și livrăm rapoarte pe care le înțelege orice proprietar.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Programează o discuție <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#servicii">Vezi ce verificăm</a>
+          <a class="btn btn-aur magnetic" href="#contact"><span>Programați o consultare</span><i aria-hidden="true">→</i></a>
+          <a class="link-fin" href="#servicii">Ce verificăm</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Ce primește asociația în fiecare lună">
-        <div class="hc-top">
-          <div>
-            <span class="hc-label">Verificare lunară</span>
-            <strong class="hc-title">Dosarul lunii, verificat integral</strong>
-          </div>
-          <span class="hc-pill" aria-hidden="true"><span class="dot"></span><span class="tw"><span class="t1">În lucru</span><span class="t2">Verificat</span></span></span>
-        </div>
-        <div class="hc-bar" aria-hidden="true"><span></span></div>
-        <ul class="check-list">
-          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Liste de plată, încasări și plăți</span></li>
-          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Reconciliere cu extrasele bancare și registrul de casă</span></li>
-          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Nereguli semnalate la timp, înainte să devină probleme</span></li>
-          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Raportul cenzorului, gata pentru adunarea generală</span></li>
-        </ul>
-        <div class="hc-result"><span class="ic ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Notă de verificare trimisă comitetului</div>
-      </aside>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg class="balanta" viewBox="0 0 400 420" fill="none">
+          <defs>
+            <linearGradient id="aur" gradientUnits="userSpaceOnUse" x1="40" y1="40" x2="360" y2="380">
+              <stop offset="0" stop-color="#f3dfa6"/>
+              <stop offset=".5" stop-color="#c9a45c"/>
+              <stop offset="1" stop-color="#8f6d2f"/>
+            </linearGradient>
+          </defs>
+          <g class="sigiliu" stroke="url(#aur)">
+            <circle cx="200" cy="200" r="188" stroke-width=".6" opacity=".35"/>
+            <circle cx="200" cy="200" r="172" stroke-width=".6" stroke-dasharray="1 7" opacity=".6"/>
+            <circle cx="200" cy="200" r="150" stroke-width=".4" opacity=".25"/>
+          </g>
+          <g class="desen" stroke="url(#aur)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path pathLength="1" d="M200 92 V318"/>
+            <circle pathLength="1" cx="200" cy="80" r="10"/>
+            <path pathLength="1" d="M150 332 H250 M170 318 H230 M160 332 Q200 344 240 332"/>
+            <g class="brat">
+              <path pathLength="1" d="M78 112 H322"/>
+              <circle pathLength="1" cx="200" cy="112" r="5"/>
+              <g class="taler stang">
+                <path pathLength="1" d="M78 112 L46 210 M78 112 L110 210"/>
+                <path pathLength="1" d="M38 210 H118 Q78 248 38 210 Z"/>
+              </g>
+              <g class="taler drept">
+                <path pathLength="1" d="M322 112 L290 210 M322 112 L354 210"/>
+                <path pathLength="1" d="M282 210 H362 Q322 248 282 210 Z"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div class="art-caption"><span>Θ</span> Themis · zeița echilibrului și a dreptății</div>
+      </div>
     </div>
+    <a class="scroll-cue" href="#despre" aria-label="Derulează la conținut"><span></span></a>
   </section>
 
+  <!-- BANDA DE VALORI -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Rigoare</span><b>✦</b><span>Transparență</span><b>✦</b><span>Independență</span><b>✦</b><span>Confidențialitate</span><b>✦</b><span>Prevenție</span><b>✦</b><span>Seriozitate</span><b>✦</b>
+      <span>Rigoare</span><b>✦</b><span>Transparență</span><b>✦</b><span>Independență</span><b>✦</b><span>Confidențialitate</span><b>✦</b><span>Prevenție</span><b>✦</b><span>Seriozitate</span><b>✦</b>
+    </div>
+  </div>
+
   <!-- DESPRE -->
-  <section id="despre" class="section-alt" aria-labelledby="despre-t">
-    <div class="wrap">
-      <div class="section-head rv">
-        <span class="kicker">Despre noi</span>
-        <h2 id="despre-t">Cenzorul pe care asociația voastră se poate baza</h2>
-        <p>Themis Expert SRL este o firmă specializată în cenzorat pentru asociațiile de proprietari. Pornim de la o idee simplă: banii comuni ai unui bloc merită aceeași atenție ca banii unei companii. De aceea combinăm experiența în contabilitate și verificare financiară cu instrumente proprii de analiză, ca nimic să nu scape neobservat.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card rv">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Independenți</h3>
-          <p>Nu administrăm asociații. Rolul nostru este exclusiv de control, deci verdictul nostru nu depinde de nimeni.</p>
-        </article>
-        <article class="card rv">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
-          <h3>Metodici</h3>
-          <p>Aceeași listă de verificări, în fiecare lună, la fiecare asociație. Rezultatele sunt comparabile și ușor de urmărit în timp.</p>
-        </article>
-        <article class="card rv">
-          <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
-          <h3>Susținuți de tehnologie</h3>
-          <p>Folosim Themis, aplicația noastră de verificare, care corelează automat documentele lunii și evidențiază diferențele.</p>
-        </article>
-      </div>
-      <div class="stats" aria-label="Themis Expert în cifre">
-        <div class="stat rv"><b>[N]+</b><span>asociații verificate</span></div>
-        <div class="stat rv"><b>[N]</b><span>ani de experiență</span></div>
-        <div class="stat rv"><b>[N]+</b><span>apartamente deservite</span></div>
-        <div class="stat rv"><b>12</b><span>verificări pe an, nu una</span></div>
+  <section id="despre" class="sectiune" aria-labelledby="despre-t">
+    <div class="wrap split">
+      <div class="eticheta rv"><span class="nr">01</span><span>Despre noi</span></div>
+      <div>
+        <h2 id="despre-t" class="titlu-mare rv">Banii comuni ai unui bloc merită aceeași atenție ca <em>banii unei companii.</em></h2>
+        <p class="text-mare rv">Themis Expert SRL este o firmă dedicată exclusiv cenzoratului pentru asociațiile de proprietari. Îmbinăm experiența în contabilitate și control financiar cu instrumente proprii de analiză, pentru ca nicio sumă să nu rămână neverificată.</p>
+
+        <div class="piloni">
+          <article class="pilon rv">
+            <span class="roman">I</span>
+            <h3>Independență</h3>
+            <p>Nu administrăm asociații. Rolul nostru este exclusiv de control, iar verdictul nostru nu depinde de nimeni.</p>
+          </article>
+          <article class="pilon rv">
+            <span class="roman">II</span>
+            <h3>Metodă</h3>
+            <p>Aceeași grilă de verificare, în fiecare lună, la fiecare asociație. Rezultate comparabile și ușor de urmărit în timp.</p>
+          </article>
+          <article class="pilon rv">
+            <span class="roman">III</span>
+            <h3>Tehnologie</h3>
+            <p>Themis, aplicația noastră internă, corelează automat documentele lunii și evidențiază orice diferență.</p>
+          </article>
+        </div>
+
+        <dl class="cifre">
+          <div class="rv"><dt>Asociații verificate</dt><dd>[N]<sup>+</sup></dd></div>
+          <div class="rv"><dt>Ani de experiență</dt><dd>[N]</dd></div>
+          <div class="rv"><dt>Apartamente deservite</dt><dd>[N]<sup>+</sup></dd></div>
+          <div class="rv"><dt>Verificări pe an</dt><dd>12</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
   <!-- SERVICII -->
-  <section id="servicii" aria-labelledby="servicii-t">
-    <div class="wrap">
-      <div class="section-head rv">
-        <span class="kicker">Servicii</span>
-        <h2 id="servicii-t">Tot ce ține de controlul gestiunii, într-un singur loc</h2>
-        <p>Preluăm rolul de cenzor prevăzut de Legea 196/2018 și îl tratăm ca pe un serviciu continuu, nu ca pe o formalitate de final de an.</p>
-      </div>
-      <div class="grid grid-2">
-        <article class="card rv">
-          <h3>Verificarea lunară a gestiunii</h3>
-          <p>Analizăm dosarul lunii: liste de plată, chitanțe, facturi, registrul de casă, registrul de bancă și extrasele de cont. Primiți o notă scurtă cu ce e în regulă și ce trebuie corectat.</p>
-        </article>
-        <article class="card rv">
-          <h3>Raportul anual al cenzorului</h3>
-          <p>Pregătim raportul pentru adunarea generală, cu descărcarea de gestiune propusă și explicații pe înțelesul proprietarilor.</p>
-        </article>
-        <article class="card rv">
-          <h3>Verificarea bugetului și a fondurilor</h3>
-          <p>Urmărim execuția bugetului, fondul de reparații, fondul de rulment și penalitățile, ca deciziile să se ia pe cifre corecte.</p>
-        </article>
-        <article class="card rv">
-          <h3>Sprijin pentru comitetul executiv</h3>
-          <p>Răspundem la întrebările președintelui și ale comitetului și participăm, la cerere, la adunările generale.</p>
-        </article>
+  <section id="servicii" class="sectiune fond-fildes" aria-labelledby="servicii-t">
+    <div class="wrap split">
+      <div class="eticheta rv"><span class="nr">02</span><span>Servicii</span></div>
+      <div>
+        <h2 id="servicii-t" class="titlu-mare rv">Controlul gestiunii, tratat ca un serviciu <em>continuu</em>, nu ca o formalitate de final de an.</h2>
+        <ol class="lista-servicii">
+          <li class="rv">
+            <span class="idx">01</span>
+            <div><h3>Verificarea lunară a gestiunii</h3><p>Liste de plată, chitanțe, facturi, registrul de casă și de bancă, extrase de cont. Primiți o notă concisă: ce este în regulă și ce trebuie corectat.</p></div>
+            <span class="sageata" aria-hidden="true">↗</span>
+          </li>
+          <li class="rv">
+            <span class="idx">02</span>
+            <div><h3>Raportul anual al cenzorului</h3><p>Pregătim raportul pentru adunarea generală, cu propunerea de descărcare de gestiune și explicații pe înțelesul proprietarilor.</p></div>
+            <span class="sageata" aria-hidden="true">↗</span>
+          </li>
+          <li class="rv">
+            <span class="idx">03</span>
+            <div><h3>Bugetul și fondurile asociației</h3><p>Urmărim execuția bugetului, fondul de reparații, fondul de rulment și penalitățile, ca deciziile să se ia pe cifre corecte.</p></div>
+            <span class="sageata" aria-hidden="true">↗</span>
+          </li>
+          <li class="rv">
+            <span class="idx">04</span>
+            <div><h3>Sprijin pentru comitetul executiv</h3><p>Răspundem întrebărilor președintelui și ale comitetului și participăm, la cerere, la adunările generale.</p></div>
+            <span class="sageata" aria-hidden="true">↗</span>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- VALORI -->
-  <section id="valori" class="section-alt" aria-labelledby="valori-t">
+  <section id="valori" class="sectiune intunecat" aria-labelledby="valori-t">
     <div class="wrap">
-      <div class="section-head rv">
-        <span class="kicker">Valori</span>
-        <h2 id="valori-t">Principiile după care lucrăm</h2>
+      <div class="cap-centrat">
+        <div class="eticheta rv"><span class="nr">03</span><span>Valori</span></div>
+        <h2 id="valori-t" class="titlu-mare rv">Principiile pe care <em>nu le negociem.</em></h2>
       </div>
-      <div class="grid grid-3">
-        <article class="card rv"><h3>Rigoare</h3><p>Fiecare sumă are un document, iar fiecare document este verificat. Nu lucrăm prin sondaj acolo unde se poate verifica integral.</p></article>
-        <article class="card rv"><h3>Transparență</h3><p>Rapoartele noastre spun lucrurilor pe nume, clar și fără jargon, ca orice proprietar să înțeleagă unde sunt banii.</p></article>
-        <article class="card rv"><h3>Independență</h3><p>Nu avem interese în administrarea asociațiilor pe care le verificăm. Lucrăm doar pentru proprietari.</p></article>
-        <article class="card rv"><h3>Confidențialitate</h3><p>Datele asociației și ale proprietarilor sunt tratate cu strictețe și protejate conform GDPR.</p></article>
-        <article class="card rv"><h3>Prevenție</h3><p>Preferăm să semnalăm o problemă în luna în care apare, nu la final de an, când e mai greu de reparat.</p></article>
-        <article class="card rv"><h3>Seriozitate</h3><p>Termene respectate, răspunsuri rapide și o persoană de contact care cunoaște asociația voastră.</p></article>
+      <div class="grila-valori">
+        <article class="valoare rv"><span class="roman">I</span><h3>Rigoare</h3><p>Fiecare sumă are un document, iar fiecare document este verificat. Integral, nu prin sondaj.</p></article>
+        <article class="valoare rv"><span class="roman">II</span><h3>Transparență</h3><p>Rapoarte care spun lucrurilor pe nume, clar și fără jargon, ca orice proprietar să știe unde sunt banii.</p></article>
+        <article class="valoare rv"><span class="roman">III</span><h3>Independență</h3><p>Nu avem interese în administrarea asociațiilor pe care le verificăm. Lucrăm doar pentru proprietari.</p></article>
+        <article class="valoare rv"><span class="roman">IV</span><h3>Confidențialitate</h3><p>Datele asociației și ale proprietarilor sunt tratate cu strictețe și protejate conform GDPR.</p></article>
+        <article class="valoare rv"><span class="roman">V</span><h3>Prevenție</h3><p>Semnalăm o problemă în luna în care apare, nu la final de an, când e mai greu de reparat.</p></article>
+        <article class="valoare rv"><span class="roman">VI</span><h3>Seriozitate</h3><p>Termene respectate, răspunsuri prompte și un interlocutor care cunoaște asociația voastră.</p></article>
       </div>
     </div>
   </section>
 
   <!-- ISTORIC -->
-  <section id="istoric" aria-labelledby="istoric-t">
-    <div class="wrap narrow">
-      <div class="section-head rv">
-        <span class="kicker">Istoric</span>
-        <h2 id="istoric-t">Drumul nostru</h2>
+  <section id="istoric" class="sectiune" aria-labelledby="istoric-t">
+    <div class="wrap split">
+      <div class="eticheta rv"><span class="nr">04</span><span>Istoric</span></div>
+      <div>
+        <h2 id="istoric-t" class="titlu-mare rv">Drumul <em>nostru.</em></h2>
+        <ol class="timeline rv-line">
+          <li class="rv"><span class="year">[AN]</span><div><h3>Începuturile</h3><p>[Cum a început activitatea: primele asociații verificate, de unde a pornit ideea.]</p></div></li>
+          <li class="rv"><span class="year">2023</span><div><h3>Înființarea Themis Expert SRL</h3><p>Activitatea de cenzorat devine o firmă dedicată, cu sediul în București.</p></div></li>
+          <li class="rv"><span class="year">[AN]</span><div><h3>Creștere</h3><p>[Numărul de asociații, extinderea în alte zone, echipa.]</p></div></li>
+          <li class="rv"><span class="year">2026</span><div><h3>Themis intră în lucru</h3><p>Echipa noastră începe să folosească Themis, aplicația internă care automatizează verificarea dosarelor lunare.</p></div></li>
+        </ol>
       </div>
-      <ol class="timeline rv-line">
-        <li class="rv"><span class="year">[AN]</span><h3>Începuturile</h3><p>[Cum a început activitatea: primele asociații verificate, de unde a pornit ideea.]</p></li>
-        <li class="rv"><span class="year">[AN]</span><h3>Înființarea Themis Expert SRL</h3><p>[Momentul în care activitatea a devenit firmă dedicată cenzoratului.]</p></li>
-        <li class="rv"><span class="year">[AN]</span><h3>Creștere</h3><p>[Numărul de asociații, extinderea în alte zone, echipa.]</p></li>
-        <li class="rv"><span class="year">2026</span><h3>Themis intră în lucru</h3><p>Echipa noastră începe să folosească Themis, aplicația internă care automatizează verificarea dosarelor lunare.</p></li>
-      </ol>
     </div>
   </section>
 
-  <!-- THEMIS -->
-  <section id="tehnologie" class="no-top" aria-labelledby="themis-t">
+  <!-- TEHNOLOGIE -->
+  <section id="tehnologie" class="sectiune fond-fildes" aria-labelledby="themis-t">
     <div class="wrap">
-      <div class="themis-band rv">
-        <div>
-          <span class="badge">TEHNOLOGIE PROPRIE</span>
-          <h2 id="themis-t">Themis, aplicația noastră de verificare</h2>
+      <div class="panou-themis rv">
+        <div class="pt-text">
+          <div class="eticheta deschis"><span class="nr">05</span><span>Tehnologie proprie</span></div>
+          <h2 id="themis-t">Themis. <em>Precizie, la fiecare leu.</em></h2>
           <p>Am dezvoltat intern Themis, o aplicație care citește documentele lunii, de la liste de plată la extrase bancare, le corelează automat și scoate în evidență orice diferență. Aplicația este folosită exclusiv de echipa noastră. Pentru asociații, rezultatul se vede în verificări mai complete și rapoarte livrate mai repede.</p>
+          <a class="btn btn-aur magnetic" href="#contact"><span>Discutați cu noi</span><i aria-hidden="true">→</i></a>
         </div>
-        <div class="band-actions">
-          <a class="btn btn-ghost" href="#contact">Discută cu noi <span class="arr" aria-hidden="true">→</span></a>
+        <div class="pt-card" aria-label="Exemplu de verificare lunară">
+          <div class="hc-top">
+            <div><span class="hc-label">Verificare lunară</span><strong class="hc-title">Dosarul lunii, verificat integral</strong></div>
+            <span class="hc-pill" aria-hidden="true"><span class="dot"></span><span class="tw"><span class="t1">În lucru</span><span class="t2">Verificat</span></span></span>
+          </div>
+          <div class="hc-bar" aria-hidden="true"><span></span></div>
+          <ul class="check-list">
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Liste de plată, încasări și plăți</span></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Reconciliere cu extrasele bancare</span></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Registrul de casă și facturile</span></li>
+            <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Notă de verificare pentru comitet</span></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section-alt" aria-labelledby="contact-t">
+  <section id="contact" class="sectiune" aria-labelledby="contact-t">
     <div class="wrap contact">
       <div>
-        <span class="kicker">Contact</span>
-        <h2 id="contact-t">Hai să discutăm despre asociația voastră</h2>
-        <p class="muted-p">Spuneți-ne câteva cuvinte despre bloc și vă răspundem în cel mult o zi lucrătoare cu o ofertă și pașii următori.</p>
-        <div class="contact-info">
-          <div class="row rv"><div><b>1. Ne scrieți</b>Completați formularul cu câteva detalii despre asociație.</div></div>
-          <div class="row rv"><div><b>2. Vă contactăm</b>Revenim în cel mult o zi lucrătoare, de luni până vineri.</div></div>
-          <div class="row rv"><div><b>3. Primiți oferta</b>Propunere adaptată numărului de apartamente și nevoilor asociației.</div></div>
-        </div>
+        <div class="eticheta rv"><span class="nr">06</span><span>Contact</span></div>
+        <h2 id="contact-t" class="titlu-urias rv">Să <em>discutăm.</em></h2>
+        <p class="text-mare rv">Spuneți-ne câteva cuvinte despre asociație. Revenim în cel mult o zi lucrătoare cu o propunere și pașii următori.</p>
+        <ol class="pasi">
+          <li class="rv"><span>I</span><div><b>Ne scrieți</b>Completați formularul cu câteva detalii despre asociație.</div></li>
+          <li class="rv"><span>II</span><div><b>Vă contactăm</b>Revenim în cel mult o zi lucrătoare, de luni până vineri.</div></li>
+          <li class="rv"><span>III</span><div><b>Primiți propunerea</b>Adaptată numărului de apartamente și nevoilor asociației.</div></li>
+        </ol>
       </div>
 
-      <form class="card rv" action="contact.php" method="post" novalidate>
+      <form class="formular rv" action="contact.php" method="post" novalidate>
         <div id="form-status" role="status" aria-live="polite"></div>
         <div class="two">
-          <div class="field"><label for="nume">Nume</label><input id="nume" name="nume" autocomplete="name" required maxlength="100"></div>
-          <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" maxlength="30"></div>
+          <div class="field"><input id="nume" name="nume" autocomplete="name" required maxlength="100" placeholder=" "><label for="nume">Nume</label></div>
+          <div class="field"><input id="telefon" name="telefon" type="tel" autocomplete="tel" maxlength="30" placeholder=" "><label for="telefon">Telefon (opțional)</label></div>
         </div>
-        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150"></div>
+        <div class="field"><input id="email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder=" "><label for="email">E-mail</label></div>
         <div class="two">
-          <div class="field"><label for="asociatie">Asociația / localitatea</label><input id="asociatie" name="asociatie" maxlength="150"></div>
-          <div class="field"><label for="apartamente">Nr. apartamente</label><input id="apartamente" name="apartamente" inputmode="numeric" maxlength="6"></div>
+          <div class="field"><input id="asociatie" name="asociatie" maxlength="150" placeholder=" "><label for="asociatie">Asociația / localitatea</label></div>
+          <div class="field"><input id="apartamente" name="apartamente" inputmode="numeric" maxlength="6" placeholder=" "><label for="apartamente">Nr. apartamente</label></div>
         </div>
-        <div class="field"><label for="mesaj">Mesaj</label><textarea id="mesaj" name="mesaj" required maxlength="3000"></textarea></div>
+        <div class="field"><textarea id="mesaj" name="mesaj" required maxlength="3000" placeholder=" "></textarea><label for="mesaj">Mesajul dumneavoastră</label></div>
         <div class="hp" aria-hidden="true"><label for="website">Nu completați</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="t" id="form-t" value="">
         <label class="consent"><input type="checkbox" name="acord" value="1" required> <span>Am citit <a href="confidentialitate.html">Politica de confidențialitate</a> și înțeleg cum vor fi folosite datele mele pentru a primi un răspuns.</span></label>
-        <button class="btn btn-primary" type="submit">Trimite mesajul <span class="arr" aria-hidden="true">→</span></button>
+        <button class="btn btn-aur btn-plin magnetic" type="submit"><span>Trimite mesajul</span><i aria-hidden="true">→</i></button>
       </form>
     </div>
   </section>
@@ -234,14 +284,17 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>© <span id="an">2026</span> Themis Expert SRL · CUI 48219871 · J2023009705406</div>
-    <div class="footer-links">
-      <a href="confidentialitate.html">Confidențialitate</a>
-      <a href="https://anpc.ro/" rel="noopener" target="_blank">ANPC</a>
+    <p class="marca-mare" aria-hidden="true">Themis <em>Expert</em></p>
+    <div class="footer-jos">
+      <div>© <span id="an">2026</span> Themis Expert SRL · CUI 48219871 · J2023009705406 · București</div>
+      <div class="footer-links">
+        <a href="confidentialitate.html">Confidențialitate</a>
+        <a href="https://anpc.ro/" rel="noopener" target="_blank">ANPC</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/main.js?v=3" defer></script>
+<script src="assets/main.js?v=4" defer></script>
 </body>
 </html>
