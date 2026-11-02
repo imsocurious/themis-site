@@ -50,7 +50,7 @@ Repository-ul fiind privat, cPanel are nevoie de o „cheie de citire” (deploy
 2. **Update from Remote** (aduce ultima versiune de pe GitHub).
 3. **Deploy HEAD Commit** (copiază site-ul în `public_html` conform fișierului `.cpanel.yml`).
 
-Notă: în `.cpanel.yml` trebuie înlocuit `UTILIZATOR` cu numele contului tău cPanel. Spune-mi-l (nu e secret) și îl pun eu.
+Notă: `.cpanel.yml` publică în `/home/administ/public_html/`.
 
 ## Pasul 5. Securitate (o singură dată)
 1. **SSL/TLS Status** → verifică să fie activ certificatul (AutoSSL) pentru `administrez.ro` și `www.administrez.ro`. Site-ul redirecționează automat pe HTTPS.
